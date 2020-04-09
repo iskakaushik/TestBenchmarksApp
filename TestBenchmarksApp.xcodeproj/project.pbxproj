@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A2147D6F243FC41D0009C580 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D6E243FC41D0009C580 /* AppDelegate.m */; };
+		A2147D6F243FC41D0009C580 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2147D6E243FC41D0009C580 /* AppDelegate.mm */; };
 		A2147D72243FC41D0009C580 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D71243FC41D0009C580 /* SceneDelegate.m */; };
 		A2147D75243FC41D0009C580 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D74243FC41D0009C580 /* ViewController.m */; };
 		A2147D78243FC41D0009C580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2147D76243FC41D0009C580 /* Main.storyboard */; };
@@ -16,6 +16,7 @@
 		A2147D80243FC41F0009C580 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D7F243FC41F0009C580 /* main.m */; };
 		A2147D8A243FC41F0009C580 /* TestBenchmarksAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D89243FC41F0009C580 /* TestBenchmarksAppTests.m */; };
 		A2147D95243FC41F0009C580 /* TestBenchmarksAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2147D94243FC41F0009C580 /* TestBenchmarksAppUITests.m */; };
+		A2147DA5243FC94E0009C580 /* profiling_task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A2147DA3243FC94E0009C580 /* profiling_task.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		A2147D6A243FC41D0009C580 /* TestBenchmarksApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBenchmarksApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2147D6D243FC41D0009C580 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A2147D6E243FC41D0009C580 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A2147D6E243FC41D0009C580 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		A2147D70243FC41D0009C580 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		A2147D71243FC41D0009C580 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		A2147D73243FC41D0009C580 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -54,6 +55,9 @@
 		A2147D90243FC41F0009C580 /* TestBenchmarksAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBenchmarksAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2147D94243FC41F0009C580 /* TestBenchmarksAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBenchmarksAppUITests.m; sourceTree = "<group>"; };
 		A2147D96243FC41F0009C580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2147DA2243FC53D0009C580 /* profiling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = profiling.h; sourceTree = "<group>"; };
+		A2147DA3243FC94E0009C580 /* profiling_task.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = profiling_task.cpp; sourceTree = "<group>"; };
+		A2147DA4243FC94E0009C580 /* profiling_task.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = profiling_task.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				A2147D6D243FC41D0009C580 /* AppDelegate.h */,
-				A2147D6E243FC41D0009C580 /* AppDelegate.m */,
+				A2147DA3243FC94E0009C580 /* profiling_task.cpp */,
+				A2147DA4243FC94E0009C580 /* profiling_task.hpp */,
+				A2147D6E243FC41D0009C580 /* AppDelegate.mm */,
 				A2147D70243FC41D0009C580 /* SceneDelegate.h */,
 				A2147D71243FC41D0009C580 /* SceneDelegate.m */,
 				A2147D73243FC41D0009C580 /* ViewController.h */,
@@ -115,6 +121,7 @@
 				A2147D7B243FC41F0009C580 /* LaunchScreen.storyboard */,
 				A2147D7E243FC41F0009C580 /* Info.plist */,
 				A2147D7F243FC41F0009C580 /* main.m */,
+				A2147DA2243FC53D0009C580 /* profiling.h */,
 			);
 			path = TestBenchmarksApp;
 			sourceTree = "<group>";
@@ -268,9 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2147D75243FC41D0009C580 /* ViewController.m in Sources */,
-				A2147D6F243FC41D0009C580 /* AppDelegate.m in Sources */,
+				A2147D6F243FC41D0009C580 /* AppDelegate.mm in Sources */,
 				A2147D80243FC41F0009C580 /* main.m in Sources */,
 				A2147D72243FC41D0009C580 /* SceneDelegate.m in Sources */,
+				A2147DA5243FC94E0009C580 /* profiling_task.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

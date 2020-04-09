@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "profiling_task.hpp"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    ProfilingTask * task = new ProfilingTask();
+    task->Start(1000 /* interval micros */, 100 /* leeway micros */);
     return YES;
 }
 
